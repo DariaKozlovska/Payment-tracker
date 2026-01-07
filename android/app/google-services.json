@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "325272333412",
+    "project_id": "my-payment-app-2026",
+    "storage_bucket": "my-payment-app-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325272333412:android:bd3126ce1baef7bf508371",
+        "android_client_info": {
+          "package_name": "com.example.payment_tracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUmTtsq0A-5ULxEtyU7F3Hx8s7r3ea6tI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
