@@ -55,7 +55,7 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBD9ofIQjlWB8jxrgo3Zel3Qe3JqvUobME',
+    apiKey: 'AIzaSyA1fCjJuRMCKr7o6AbHQLAn08PKlhiqSwg',
     appId: '1:325272333412:ios:8ccdd92989146b00508371',
     messagingSenderId: '325272333412',
     projectId: 'my-payment-app-2026',
@@ -64,11 +64,12 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBD9ofIQjlWB8jxrgo3Zel3Qe3JqvUobME',
+    apiKey: 'AIzaSyA1fCjJuRMCKr7o6AbHQLAn08PKlhiqSwg',
     appId: '1:325272333412:ios:8ccdd92989146b00508371',
     messagingSenderId: '325272333412',
     projectId: 'my-payment-app-2026',
     storageBucket: 'my-payment-app-2026.firebasestorage.app',
     iosBundleId: 'com.example.paymentTracker',
   );
+
 }
