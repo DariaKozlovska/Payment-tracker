@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../auth_provider.dart';
+import 'register_screen.dart';
 
-class RegisterScreen extends ConsumerStatefulWidget {
-  const RegisterScreen({super.key});
+class LoginScreen extends ConsumerStatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  ConsumerState<RegisterScreen> createState() => _RegisterScreenState();
+  ConsumerState<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _RegisterScreenState extends ConsumerState<RegisterScreen> {
+class _LoginScreenState extends ConsumerState<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _loading = false;
@@ -20,7 +21,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
     final authRepository = ref.watch(authRepositoryProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Register')),
+      appBar: AppBar(title: const Text('Login')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -41,13 +42,10 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
               onPressed: () async {
                 setState(() => _loading = true);
                 try {
-                  await authRepository.signUp(
+                  await authRepository.signIn(
                     email: _emailController.text.trim(),
                     password: _passwordController.text.trim(),
                   );
-                  if (mounted) {
-                    Navigator.pop(context);
-                  }
                 } catch (e) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text(e.toString())),
@@ -56,7 +54,16 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                   setState(() => _loading = false);
                 }
               },
-              child: const Text('Register'),
+              child: const Text('Login'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const RegisterScreen()),
+                );
+              },
+              child: const Text('Create account'),
             ),
           ],
         ),
